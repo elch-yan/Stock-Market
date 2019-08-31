@@ -1,0 +1,29 @@
+{
+  "name": "stock-market",
+  "version": "1.0.0",
+  "description": "Simple app for real time stock market",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.11",
+    "standard": "^14.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elch-yan/Stock-Market.git"
+  },
+  "author": "elchyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elch-yan/Stock-Market/issues"
+  },
+  "homepage": "https://github.com/elch-yan/Stock-Market#readme"
+}
