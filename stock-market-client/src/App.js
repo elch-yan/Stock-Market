@@ -6,7 +6,7 @@ import withAuth from './components/WithAuth';
 
 import SignUp from './components/SignUp';
 import Login from './components/Login';
-import Products from './components/Products';
+import Stocks from './components/Stocks';
 
 const App = () => {
     return (
@@ -22,7 +22,7 @@ const App = () => {
                         </div>
                         <Route path="/sign-up" component={SignUp} />
                         <Route path="/login" component={Login} />
-                        <Route path="/products" component={withAuth(Products)} />
+                        <Route path="/stocks" component={withAuth(Stocks)} />
                     </div>
                 </div>
             </BrowserRouter>
