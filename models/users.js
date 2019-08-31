@@ -7,6 +7,7 @@ const saltRounds = 10;
 const Users = new Schema({
     email: { type: String, required: true, unique: true },
     balance: { type: Number },
+    stock_ids: { type: Schema.ObjectId, ref: 'stocks' },
     password: { type: String, required: true }
 });
 
