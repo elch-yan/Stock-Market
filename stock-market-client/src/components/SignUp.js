@@ -18,7 +18,7 @@ const LoginComponent = () => {
                 email,
                 password
             });
-            console.log(data);
+            
             assert(data && data.status === 'success', data ? data.message : 'Data not fetched from server');
 
 

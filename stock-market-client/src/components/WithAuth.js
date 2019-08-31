@@ -9,12 +9,12 @@ export default function withAuth(ComponentToProtect) {
     return () => {
         const [ loading = false, setLoading ] = useState();
         const [ redirect = false, setRedirect ] = useState();
-console.log('heey')
+
         useEffect(() => {
             const checkToken = async () => {
                 try {
-                    const res = await axios.get('/authentication/checkToken');
-                    assert(res.status === 200, res.data ? res.data.message : 'Authorization error');
+                    const { data } = await axios.get('/authentication/checkToken');
+                    assert(data && data.status === 'success', data ? data.message : 'Authorization error');
 
                     setLoading(false);
                     setRedirect(false);
@@ -29,10 +29,10 @@ console.log('heey')
 
         return (
             <div>
-                { loading ? null : 
+                { loading ? <div>{loading}</div> : 
                     redirect ? <Redirect to="/login" /> :
                     <React.Fragment>
-                        <ComponentToProtect {...this.props} />
+                        <ComponentToProtect />
                     </React.Fragment>
                 }
             </div>

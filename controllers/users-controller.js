@@ -7,7 +7,7 @@ module.exports = (usersService) => {
 
                 const token = await usersService.register({ email, password });
 
-                res.cookie('token', token, { httpOnly: true }).send({
+                res.cookie('token', token).send({
                     status: 'success'
                 });
             } catch (err) {
@@ -23,7 +23,7 @@ module.exports = (usersService) => {
 
                 const token = await usersService.authenticate({ email, password });
 
-                res.cookie('token', token, { httpOnly: true }).send({
+                res.cookie('token', token).send({
                     status: 'success'
                 });
             } catch (err) {

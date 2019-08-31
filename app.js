@@ -6,7 +6,7 @@ const cors = require('cors');
 
 
 const app = express();
-app.use(cors());
+app.use(cors( {credentials: true, origin: 'http://localhost:3000'} ));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
@@ -32,7 +32,9 @@ const UsersService = require('./services/users-service');
 const usersService = new UsersService(usersDao, authenticationService);
 
 app.get('/api/authentication/checkToken', authenticationService.authenticated, (req, res) => {
-    res.sendStatus(200);
+    res.send({
+        status: 'success'
+    });
 });
 
 const usersController = require('./controllers/users-controller')(usersService);
